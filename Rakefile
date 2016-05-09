@@ -21,7 +21,7 @@ def package
   archive_file = "%s/%s-%s.zip" % [output_dir, File.basename(Dir.pwd), manifest["version"]]
 
   # Build up the command to be used to create the zip file
-  cmd = "zip -9 -r %s ../%s -x '*.git*' -x '*test*/' -x '*images/*' -x '*.md' -x '*Rakefile'" % [archive_file, File.basename(Dir.pwd)]
+  cmd = "zip -9 -r %s ../%s -x '*.git*' -x '*test/*' -x '*images/*' -x '*.md' -x '*Rakefile'" % [archive_file, File.basename(Dir.pwd)]
 
   puts "Creating package: %s" % [archive_file]
   `#{cmd}`
